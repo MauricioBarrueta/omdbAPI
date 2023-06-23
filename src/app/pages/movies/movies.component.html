@@ -1,0 +1,31 @@
+<app-header (nameValueEmitter)="getMovieNameValue($event)"></app-header>
+
+<div class="requestStatus">{{requestStatus}}</div>
+<div class="movie-card-container" *ngFor="let movie of movieData">    
+    <div class="movie-general-data">
+        <img class="movie-poster" [src]="movie.Poster" alt="">
+        <div class="movie-info">
+            <p class="movie-title">{{movie.Title}}</p>
+            <div class="movie-time">
+                <span>{{movie.Year}}</span>
+                <span> &#8226; {{movie.Rated}}</span>
+                <span> &#8226; {{movie.Runtime}}</span>
+            </div>
+            <div class="movie-rating">
+                <img src="../../../assets/svg/ratingStar.svg" alt="">
+                {{movie.imdbRating}}
+            </div>
+            <div class="movie-genre">
+                <span *ngFor="let genre of movie.Genre?.split(',')">{{genre}}</span>
+            </div>
+            <div class="movie-plot">                
+                <p>{{movie.Plot}}</p>
+            </div>
+        </div>        
+    </div>
+    <div class="movie-details">
+        <p>&#xf03d;: {{movie.Director}}</p>
+        <p>&#xf0c0;: {{movie.Actors}}</p>
+        <p>&#xf091;: {{movie.Awards}}</p>
+    </div>    
+</div>

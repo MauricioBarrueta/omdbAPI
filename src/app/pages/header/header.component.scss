@@ -1,0 +1,41 @@
+header {
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem; cursor: default;
+    text-align: center;
+    background-color: #dba506; border-bottom: 3px solid #000;    
+    .link { 
+        font-size: 20px; font-weight: bold; text-decoration: none;        
+        color: #000; transition: all 0.25s;
+        &:hover { color: darkblue; }
+    }
+    span {        
+        font-style: italic; font-size: 16px; 
+    }
+    .navigation {        
+        padding: 0.5rem; text-align: center;
+        border-top: 2px solid #000;
+        button {
+            font-size: 14px;
+            margin-inline: 15px;
+            &:nth-child(1)::after, &:nth-child(2)::after { font-family: FontAwesome; margin-left: 10px; }
+            &:nth-child(1)::after { content: "\f008"; }
+            &:nth-child(2)::after { content: "\f26c"; }
+        }        
+    }
+}
+
+.input-container {
+    display: flex; justify-content: center;    
+    padding: 1em;
+    input {
+        font-family: 'Source Code Pro', FontAwesome;
+        width: 75%; text-align: center; text-transform: capitalize; 
+        border-color: #000;      
+        &::placeholder { font-size: 14px; font-style: italic; text-transform: none; }                
+    }   
+    button {
+        border-radius: 50%; border-color: #000;  margin-inline: 10px;
+        &::after {
+            content: "\f002"; font-family: FontAwesome;
+        }
+    }
+}

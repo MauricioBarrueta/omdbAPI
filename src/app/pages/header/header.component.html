@@ -1,0 +1,14 @@
+<header>
+    <a class="link" href="http://www.omdbapi.com/" target="_blank">OMDb API: </a>
+    <span>La base de datos más grande sobre películas y series</span>
+
+    <div class="navigation">
+        <button class="btn btn-dark" (click)="redirectTo('movies')">Películas y Series</button>
+        <button class="btn btn-dark" (click)="redirectTo('series')">Series (Temporadas - Episodios)</button>
+    </div>
+</header>
+<div class="input-container">
+    <input class="form-control input" type="text" name="movieName" [(ngModel)]="movieName" [placeholder]="placeholderValue">
+        <!--  &#xf26c &#xe131; -->
+    <button class="btn btn-warning" (click)="setMovieValue()"></button>
+</div>

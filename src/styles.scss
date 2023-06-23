@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    padding: 0; margin: 0; box-sizing: border-box;
+}
+
+body {    
+    width: 100%; max-width: 100%; min-height: 100vh;
+    padding-bottom: 1em;
+    font-family: 'Source Code Pro', monospace; 
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(28,25,23,0.75) 100%);  
+}
