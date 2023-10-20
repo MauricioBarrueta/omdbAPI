@@ -1,7 +1,11 @@
-# OmdbApi
+🇲🇽 Página que permite consultar información detallada sobre una amplia variedad de películas y series de televisión, además de       que, en el caso de las series, es posible consultar cada temporada y cada capítulo correspondiente a esta, así como los datos     de cada capítulo.
+
+🇺🇸 This page allows you to consult detailed information on a wide variety of movies and TV series, and, in the case of series,       it's possible to consult each season and each chapter corresponding to it, as well as the data of each chapter.
+
+![OMDbAPI](https://github.com/MauricioBarrueta/omdbAPI/assets/60496232/2f1821e1-bea1-4ea0-a632-89c5fba61505)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
