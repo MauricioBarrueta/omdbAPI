@@ -4,6 +4,8 @@
     padding: 1em; color: #1c1917;    
 }
 
+$mustardYellow: #dba506;
+
 .serie-card-container, .episode-card-container {
     width: 100%; height: fit-content;
     display: grid; justify-content: center; 
@@ -34,7 +36,7 @@
             .serie-rating, .episode-rating {
                 font-size: 18px; font-weight: bold;
                 align-items: center; gap: 10px; margin: 10px 0;  
-                background-color: #dba506;                          
+                background-color: $mustardYellow;                          
                 img { width: 20px; filter: drop-shadow(0 0 1px #000); }
             }
             .serie-genre, .episode-genere {
@@ -52,7 +54,7 @@
                     font-size: 12px; font-weight: bold; text-align: center;
                     color: white; 
                     padding: 5px 10px; border-radius: 25%; border: none; transition: 0.25s;
-                    background-color: #dba506;
+                    background-color: $mustardYellow;
                     &:hover { opacity: .7; }
                 }
             }
@@ -70,7 +72,7 @@
     .serie-details, .episode-production {
         width: 100%; display: table; text-align: justify;
         border-radius: 0 0 10px 10px;
-        background-color: #dba506; cursor: default;
+        background-color: $mustardYellow; cursor: default;
         p { 
             font-family: 'Source Code Pro', FontAwesome;
             font-size: 16px; letter-spacing: 2px; text-align: center;
@@ -93,7 +95,7 @@
         }
         .serie-season-number {
             font-size: 18px; text-align: center; font-weight: bold; letter-spacing: 2px;
-            padding: 5px; margin-bottom: 5px; background-color: #dba506; cursor: default;
+            padding: 5px; margin-bottom: 5px; background-color: $mustardYellow; cursor: default;
         }
         .serie-episodes-list {
             display: grid; grid-template-columns: 50% 50%;  
@@ -105,7 +107,7 @@
                 &::after {
                     content: ''; display: block;  z-index: -1; opacity: .75;
                     position: absolute; top: 60%; width: 0; height: 4px;
-                    background: #dba506; transition: width .4s;                    
+                    background: $mustardYellow; transition: width .4s;                    
                 }
                 &:hover::after { width: 100%; }
                 span { color: crimson; }
@@ -119,7 +121,7 @@
         .episode-number {
             text-align: center; font-size: 16px; font-weight: bold; letter-spacing: 2px;
             margin: 0; padding: 5px; margin-inline: 0.5rem; cursor: default;
-            background-color: #dba506; color: white;
+            background-color: $mustardYellow; color: white;
         }
         .episode-general-data {    
             border-radius: 0;
