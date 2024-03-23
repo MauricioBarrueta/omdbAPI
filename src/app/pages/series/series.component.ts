@@ -26,7 +26,7 @@ export class SeriesComponent {
 
   /* Obtener datos generales de la serie */
   getSerieNameValue(name: string) {
-    this.serieData = []
+    this.serieData = [], this.totalSeasonsArray = [], this.episodesList = [], this.episodeData = [], this.seasonData = []
     this.requestResponse = ''
     this.serieService.getSerieByName(name)
       .subscribe((res: any) => {        
@@ -75,7 +75,7 @@ export class SeriesComponent {
   /* Si la petición falla o si el nombre que se recibe viene vacío */
   responseStatus(nameValue: string) {
     this.serieData = []
-    this.requestResponse = !nameValue ? 'No haz ingresado ninguna serie' : 'No existe ninguna serie con este nombre'
+    this.requestResponse = !nameValue ? 'No haz ingresado ninguna serie para buscar...' : 'No existe ninguna serie con este nombre'
   }
   
   /* Limpiar tabla de episodios por temporada */

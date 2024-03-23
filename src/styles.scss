@@ -2,12 +2,20 @@
 
 * {
     padding: 0; margin: 0; box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace, FontAwesome; 
+}
+
+/* Color Palette */
+:root {
+    --urobilin: #deb522; --urobilinShade: #b18d00;
+    --smokyBlack: #0c0b00;
+    --snow: #fcf7f7;
+    --cyanCurnflowerBlue: #128bb5; --cyanCurnflowerBlueShade: #007098;
+    --firebrick: #b62020;
 }
 
 body {    
     width: 100%; max-width: 100%; min-height: 100vh;
     padding-bottom: 1em;
-    font-family: 'Source Code Pro', monospace; 
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(28,25,23,0.75) 100%);  
+    background-image: linear-gradient(to bottom, #0c0b00, #423e39, #7c7773, #bbb4b3, #fcf7f7);  
 }

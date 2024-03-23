@@ -1,41 +1,49 @@
 header {
-    padding: 0.5rem 0.5rem 0.25rem 0.5rem; cursor: default;
+    padding: 0.5rem 0 0 0; cursor: default;
     text-align: center;
-    background-color: #dba506; border-bottom: 3px solid #000;    
+    background-color: var(--urobilin);  
     .link { 
-        font-size: 20px; font-weight: bold; text-decoration: none;        
-        color: #000; transition: all 0.25s;
+        font-size: 18px; font-weight: bold; text-decoration: none;            
+        color: var(--smokyBlack); transition: all 0.25s;
         &:hover { color: darkblue; }
     }
-    span {        
-        font-style: italic; font-size: 16px; 
-    }
+    span { font-size: 16px; }
+
+    small {
+        width: 100%; display: inline-block;
+        font-size: 12px; letter-spacing: 1px; padding: 5px 0;
+        margin-top: 10px; border-top: 1px solid var(--smokyBlack);
+    }  
     .navigation {        
-        padding: 0.5rem; text-align: center;
-        border-top: 2px solid #000;
+        background-color: var(--smokyBlack);
+        padding: 0.5rem; text-align: center;        
         button {
-            font-size: 14px;
-            margin-inline: 15px;
-            &:nth-child(1)::after, &:nth-child(2)::after { font-family: FontAwesome; margin-left: 10px; }
-            &:nth-child(1)::after { content: "\f008"; }
-            &:nth-child(2)::after { content: "\f26c"; }
-        }        
+            width: 132px; margin-inline: 15px;
+            font-size: 15px; 
+            background-color: var(--smokyBlack); border: 0;
+            &:hover {
+                background-color: var(--snow);  color: var(--smokyBlack);
+            }
+            &:nth-child(1)::before, &:nth-child(2)::before { margin-right: 10px; }
+            &:nth-child(1)::before { content: "\f008"; }
+            &:nth-child(2)::before { content: "\f26c"; }
+        }              
     }
 }
 
 .input-container {
     display: flex; justify-content: center;    
     padding: 1em;
+    input, button { border-color: var(--smokyBlack); border-width: 2px; }
     input {
-        font-family: 'Source Code Pro', FontAwesome;
-        width: 75%; text-align: center; text-transform: capitalize; 
-        border-color: #000;      
-        &::placeholder { font-size: 14px; font-style: italic; text-transform: none; }                
+        font-family: 'Source Code Pro';
+        width: 85%; text-align: center; text-transform: capitalize; 
+        border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 0;    
+        &::placeholder { font-size: 14px; letter-spacing: 1px; text-transform: none; }                
     }   
     button {
-        border-radius: 50%; border-color: #000;  margin-inline: 10px;
-        &::after {
-            content: "\f002"; font-family: FontAwesome;
-        }
+        border-top-left-radius: 0; border-bottom-left-radius: 0; 
+        background-color: var(--urobilin); 
+        &:hover { background-color: var(--smokyBlack); color: var(--snow); }
     }
 }

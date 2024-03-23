@@ -26,6 +26,6 @@ export class MoviesComponent {
   /* Si la respuesta devuelve un 'False' o el valor de 'name' viene vacío */
   responseError(nameValue: string) {
     this.movieData = [] 
-    this.requestStatus = !nameValue ? 'Ingresa algún nombre' : 'No existe ninguna película o serie con este nombre' 
+    this.requestStatus = !nameValue ? 'No has ingresado ninguna película para buscar...' : 'No existe ninguna película con este nombre' 
   }
 }

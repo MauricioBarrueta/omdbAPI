@@ -9,8 +9,8 @@
             <p class="serie-title">{{serie.Title}}</p>
             <div class="serie-time">
                 <span>{{serie.Year}}</span>
-                <span> &#8226; {{serie.Rated}}</span>
-                <span> &#8226; {{serie.Runtime}}</span>
+                <span> &#8226; &nbsp; {{serie.Rated}}</span>
+                <span> &#8226; &nbsp; {{serie.Runtime}}</span>
             </div>
             <div class="serie-rating">
                 <img src="../../../assets/svg/ratingStar.svg" alt="">
@@ -38,8 +38,8 @@
     <ng-template #episodesListContainer>        
         <!-- Season Episodes List -->
         <div class="serie-episodes" *ngFor="let episode of seasonData">
-            <button class="clear-episodes-list" title="Limpiar" (click)="clearContent()"></button>
-            <p class="serie-season-number">Season {{episode.Season}} episodes:</p>
+            <button class="clear-episodes-list" title="Regresar" (click)="clearContent()">&#xf55a;</button>
+            <p class="serie-season-number">Episodes from season {{episode.Season}}:</p>
             <div class="serie-episodes-list">
                 <button *ngFor="let e of episodesList" (click)="getSelectedEpisode(episode.Season, e.Episode)">
                     <span>{{e.Episode}}: </span>{{e.Title}}
@@ -48,9 +48,8 @@
         </div>
         <!-- Episode Info -->
         <div class="episode-card-container" *ngFor="let epData of episodeData">
-            <p class="episode-number">Episode: {{epData.Episode}}</p>
+            <p class="episode-number">Episode {{epData.Episode}}:</p>
             <div class="episode-general-data">
-                <img class="episode-poster" [src]="epData.Poster">
                 <div class="episode-info">
                     <p class="episode-title">{{epData.Title}}</p>
                     <span class="season-episode-info">Season: {{epData.Season}} &#8226; Episode: {{epData.Episode}}</span>
@@ -70,6 +69,8 @@
                         <p>{{epData.Plot}}</p>
                     </div>
                 </div>
+                <img class="episode-poster" [src]="epData.Poster">
+
             </div>
             <div class="episode-production">
                 <p>&#xf03d;: {{epData.Director}}</p>
