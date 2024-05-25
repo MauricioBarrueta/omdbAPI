@@ -1,52 +1,9 @@
-.requestStatus {
-    width: 100%; position: absolute;
-    text-align: center; font-size: 18px; letter-spacing: 2px; font-weight: bold;
-    padding: 1em; color: var(--firebrick); text-shadow: -1px -1px 0 var(--smokyBlack), 1px -1px 0 var(--smokyBlack), -1px 1px 0 var(--smokyBlack), 1px 1px 0 var(--smokyBlack);    
-}
+@import url(../../app.component.scss);
 
-.serie-card-container { /*, .episode-card-container */
-    width: 100%; height: fit-content;
-    display: grid; justify-content: center;     
-
-    .serie-general-data, .episode-general-data, .serie-details, .episode-production /*.serie-episodes, .episode-card-container*/ {
-        border: 2px solid var(--smokyBlack);
-    }
-
-    .serie-general-data, .episode-general-data {
-        max-width: 850px; height: fit-content;
-        position: relative; display: flex; align-items: center; gap: 10px;
-        border-radius: 10px 10px 0 0; padding: 0.5rem; cursor: default;
-        background-color: var(--smokyBlack); color: var(--snow);
-        .serie-poster, .episode-poster {
-            width: 210px; border-radius: 10px;
-            border: 1px solid;
-        }
-        .serie-info, .episode-info {
-            .serie-title, .episode-title {
-                text-align: center; font-size: 20px; letter-spacing: 2px; font-weight: bold; 
-                margin: 0; padding: 2.5px; border-bottom: 1px solid var(--snow); 
-            }
-            .serie-time, .serie-rating, .serie-genre, .serie-seasons, 
-            .episode-time, .episode-rating, .episode-genere {
-                display: flex; justify-content: center;
-                padding: 5px;
-            }
-            .serie-time, .episode-time {
-                font-size: 14px;  font-weight: 300;       
-                gap: 25px; margin: 5px 0 auto; padding: 0 !important; color: darkgray;
-            }
-            .serie-rating, .episode-rating {
-                font-size: 18px; font-weight: bolder; letter-spacing: 1px;
-                align-items: center; margin: 5px 0;  
-                background-color: var(--urobilin);                          
-                img { width: 20px; margin-right: 15px; filter: drop-shadow(1px 1px 1px var(--smokyBlack)); }
-                &::after {
-                    content: '/10'; font-size: 14px; opacity: .55;
-                }
-            }
-            .serie-genre, .episode-genere {
-                font-size: 14px;
-                margin: 5px 0; justify-content: space-around;
+.serie-card-container { 
+    .serie-general-data, .episode-general-data {         
+        .serie-info, .episode-info {            
+            .serie-genre, .episode-genere {                
                 border-bottom: 1px dashed var(--snow);
             }
             .serie-seasons {                
@@ -61,34 +18,21 @@
                     background-color: var(--cyanCurnflowerBlue); color: var(--snow); 
                     &:hover { background-color: var(--cyanCurnflowerBlueShade);}
                 }
-            }
-            .serie-plot {
-                padding: 5px; margin: 5px 0; border-top: 1px solid var(--snow);                         
-                p {
-                    font-size: 13px; text-align: justify;
-                    font-weight: 500; letter-spacing: 1px;
-                }
-            }
+            }            
         }
     }
-    
-    .serie-details, .episode-production {
-        width: 100%; display: table; 
-        padding: 0.5rem; border-radius: 0 0 10px 10px;
-        background-color: var(--urobilin); cursor: default;
-        p { 
-            font-size: 16px; letter-spacing: 2px; text-align: justify;
-            margin: 10px 0;            
-        }  
-    }
 
-    /* Episodes by season list */
+    /* Episodes by season */
     .serie-episodes {
-        max-width: 850px;
-        padding: 0.5rem; border-radius: 10px 10px 0 0; margin-top: 10px;
-        background-color: var(--smokyBlack); color: var(--snow);        
-        .clear-episodes-list { /* Clear Episodes List Button */
-            width: fit-content; position: absolute;
+        width: 100%; position: relative;
+        padding: 0.5rem; border: 1px solid var(--snow); 
+        border-top-width: 5px !important; border-top-color: var(--urobilin) !important;
+        background-color: var(--smokyBlack); color: var(--snow);    
+
+        /* Clear List Button */    
+        .clear-episodes-list { 
+            width: fit-content; position: absolute; left: 5px;
+            font-size: 10px; letter-spacing: 1px;
             padding: 5px; transition: color 0.35s;    
             background-color: transparent; color: var(--snow); border: none;
             &:hover { color: var(--firebrick); }               
@@ -120,14 +64,15 @@
 
     /* Episode Card */
     .episode-card-container {  
-        max-width: 850px;
         background-color: var(--smokyBlack); border-radius: 0 0 10px 10px;        
         .episode-number {
             text-align: center; font-size: 16px; font-weight: bold; letter-spacing: 2px;
-            margin: 0; padding: 5px; margin-inline: 0.5rem; cursor: default;
-            color: var(--snow); border-bottom: 2px dotted var(--snow);
+            margin: 0; padding: 5px 0; cursor: default; color: var(--snow);            
+            border: 1px solid var(--snow); border-bottom-style: dashed;
+            border-top-width: 5px !important; border-top-color: var(--urobilin) !important;
         }
-        .episode-general-data {    
+        .episode-general-data {  
+            border-radius: 0; border-top: none;
             .episode-info {
                 width: 100%;
                 .season-episode-info {
@@ -138,11 +83,8 @@
                     border-bottom: 1px solid var(--snow);
                 }
                 .episode-plot {
-                    padding: 5px; margin: 10px 0;                                
-                    p {
-                        font-size: 12px; text-align: justify;
-                        font-weight: 500; letter-spacing: 1px;
-                    }
+                    margin: 10px 0; border-top: none;                                
+                    .plot { font-size: 12px; }
                 }            
             }
         }

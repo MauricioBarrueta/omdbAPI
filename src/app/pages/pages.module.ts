@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from '../header/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SeriesComponent } from './series/series.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule, 
+    RouterModule
   ],
   exports: [
     HeaderComponent,

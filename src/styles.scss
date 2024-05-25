@@ -14,8 +14,11 @@
     --firebrick: #b62020;
 }
 
+html, body {
+    height: 100%; position: relative;
+}
 body {    
-    width: 100%; max-width: 100%; min-height: 100vh;
-    padding-bottom: 1em;
-    background-image: linear-gradient(to bottom, #0c0b00, #423e39, #7c7773, #bbb4b3, #fcf7f7);  
+    max-width: 100%; min-height: 100vh;
+    background-color: var(--smokyBlack);
+    // background-image: linear-gradient(to bottom, #0c0b00, #423e39, #7c7773, #bbb4b3, #fcf7f7);  
 }

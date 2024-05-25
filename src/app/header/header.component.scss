@@ -1,0 +1,49 @@
+header {
+    padding: 0.5rem; cursor: default;
+    text-align: center; letter-spacing: 1px;
+    background-color: var(--urobilin); color: var(--smokyBlack);
+    border-bottom: 2px dashed var(--smokyBlack);
+    .link { 
+        font-size: 18px; font-weight: bold; text-decoration: none;            
+        color: var(--smokyBlack); transition: all 0.25s;
+        &:hover { color: var(--cyanCurnflowerBlue); }        
+        img {
+            width: 25px; height: 25px;
+            margin-bottom: 5px;            
+        }
+    }
+    span { font-size: 16px; }
+}
+
+.navigation {   
+    display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap;
+    background-color: var(--smokyBlack); border-bottom: 1px solid var(--snow);
+    padding: 0.5rem; text-align: center;      
+    a {        
+        font-size: 14px; 
+        background-color: var(--smokyBlack); border: 0;
+        &:hover {
+            background-color: var(--snow); color: var(--smokyBlack);
+        }             
+        &:hover img { filter: none; }
+        img {
+            width: 20px; height: 20px;
+            filter: invert(100%); margin-bottom: 5px;
+        }
+    }              
+}
+
+.input-container {
+    padding: 1em 1em 0.5rem 1em;
+    form {
+        width: 100%;
+        input {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center; text-transform: capitalize;                
+            &::placeholder { 
+                font-size: 12px; letter-spacing: 1px; text-transform: none; 
+            }                
+        } 
+    }
+}

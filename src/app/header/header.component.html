@@ -1,0 +1,15 @@
+<header>
+    <a class="link" href="http://www.omdbapi.com/" target="_blank">
+       <img src="https://api.iconify.design/bx:bxl-imdb.svg"> OMDb API: 
+    </a>
+    <span>La base de datos más grande de películas y series totalmente gratis</span>
+</header>
+<div class="navigation">
+    <a class="btn btn-dark" [href]="['movies']"><img src="{{svgFolder}}movie.svg" alt=""> Películas</a>
+    <a class="btn btn-dark" [href]="['series']"><img src="{{svgFolder}}serie.svg" alt=""> Series</a>
+</div>
+<div class="input-container">
+    <form (submit)="setParam(inputValue)">
+        <input class="form-control input" type="text" name="movieName" [(ngModel)]="inputValue" [placeholder]="placeholder">
+    </form>
+</div>

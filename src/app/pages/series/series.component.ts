@@ -1,61 +1,74 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SerieService } from './service/serie.service';
 import { Episode, Episodes, Serie } from './interface/serie';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
   styleUrls: ['./series.component.scss']
 })
-export class SeriesComponent {
+export class SeriesComponent implements OnInit {
 
-  constructor(private readonly serieService: SerieService, private router: Router) {}
+  constructor(private readonly serieService: SerieService, private route: ActivatedRoute) {}
 
-  serieName!: string /* Recibe el valor enviado desde el header */
-  serieData: Serie[] = []
+  serieName!: string 
+  serie$: Serie[] = []
   totalSeasonsValue!: number 
-  totalSeasonsArray: number[] = [] 
+  totalSeasons$: number[] = [] 
+  season$: Episodes[] = []
+  episodes$: any[] = []
+  episode$: Episode[] = []
 
-  seasonData: Episodes[] = []
-  episodesList: any[] = []
+  requestStatus!: string
+  
+  ngOnInit(): void {
+    //* Obtiene el parámetro de la ruta, si viene vacío se asigna un valor predeterminado
+    this.route.queryParams.subscribe(params => { this.serieName = params['serie'] })
+    if(this.serieName === undefined || this.serieName === null || this.serieName === '') {
+      this.serieName = 'Blue Eye Samurai'
+    }
+    this.getSerieDetails()
+  }
 
-  episodeData: Episode[] = []
+  /* Obtiene el valor que llega del input */
+  getSerieParam(name: string) {
+    this.serieName = name
+    this.getSerieDetails()
+  }
 
-  requestResponse!: string
+  /* Se obtiene la serie de acuerdo al nombre */
+  getSerieDetails() {
+    this.serie$ = [], this.totalSeasons$ = [], this.episodes$ = [], this.episode$ = [], this.season$ = []
+    this.requestStatus = ''
 
-  /* Obtener datos generales de la serie */
-  getSerieNameValue(name: string) {
-    this.serieData = [], this.totalSeasonsArray = [], this.episodesList = [], this.episodeData = [], this.seasonData = []
-    this.requestResponse = ''
-    this.serieService.getSerieByName(name)
+    this.serieService.getSerieByName(this.serieName)
       .subscribe((res: any) => {        
-        if(res.Response === 'True' && name) {
-          this.serieName = name
+        if(res.Response === 'True' && this.serieName && !this.serieName.includes('undefined')) {
           this.totalSeasonsValue = res.totalSeasons
           for (let i = 1; i <= this.totalSeasonsValue; i++) {
-            this.totalSeasonsArray.push(i)
+            this.totalSeasons$.push(i)
           }
-          this.serieData.push(res)
+          this.serie$.push(res)
         } else {
-          this.serieName = ''
-          this.responseStatus(name)
+          // this.serieName = ''
+          this.responseStatus(this.serieName)
         }
       })
   }
 
   /* Obtener la season seleccionada y los datos de esta */
   getSelectedSeason(season: number) {
-    this.seasonData = []
-    this.episodesList = []
-    this.episodeData = []
+    this.season$ = [], this.episodes$ = [], this.episode$ = []
+
     this.serieService.getEpisodesBySeason(this.serieName, season)
       .subscribe((res: any) => {
         if(res.Response === 'True') { 
-          this.seasonData.push(res)          
-          /* Se inyecta la interface 'Episodes[]' de la respuesta en el array local  */
-          res.Episodes.forEach((element: any) => {
-            this.episodesList.push(element)  
+          this.season$.push(res)          
+          //* Se inyecta la interface 'Episodes[]' de la respuesta en el array
+          res.Episodes.forEach((episode: any) => {
+            this.episodes$.push(episode)  
           });
         } else { 
           this.responseStatus(this.serieName)
@@ -65,22 +78,23 @@ export class SeriesComponent {
 
   /* Obtener datos del episodio seleccionado */
   getSelectedEpisode(season: string, episode: number) {  
-    this.episodeData = []
+    this.episode$ = []
+
     this.serieService.getEpisodeDataBySeason(this.serieName, season, episode)
       .subscribe((res: any) => {
-        res.Response === 'True' ? this.episodeData.push(res) : this.responseStatus(this.serieName)
-      })
+        res.Response === 'True' ? this.episode$.push(res) : this.responseStatus(this.serieName)
+      })     
   }
 
   /* Si la petición falla o si el nombre que se recibe viene vacío */
   responseStatus(nameValue: string) {
-    this.serieData = []
-    this.requestResponse = !nameValue ? 'No haz ingresado ninguna serie para buscar...' : 'No existe ninguna serie con este nombre'
+    this.serie$ = []
+    this.requestStatus = !nameValue || nameValue === undefined ? `${environment.serieParamEmpty}` : `${environment.serieNotFound}`
   }
   
   /* Limpiar tabla de episodios por temporada */
   clearContent() {
-    this.seasonData = [] 
-    this.episodeData = []
+    this.season$ = [] 
+    this.episode$ = []
   }
 }
