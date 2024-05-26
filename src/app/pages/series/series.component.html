@@ -30,10 +30,10 @@
         </div>    
     </div>
     <div class="serie-details" *ngIf="season$.length <= 0;else episodesListContainer">
-        <p>&#xf03d;: {{serie.Director}}</p>
-        <p>&#xf305;: {{serie.Writer}}</p>
-        <p>&#xf0c0;: {{serie.Actors}}</p>
-        <p>&#xf091;: {{serie.Awards}}</p>
+        <p class="detail">&#xf03d;: {{serie.Director}}</p>
+        <p class="detail">&#xf305;: {{serie.Writer}}</p>
+        <p class="detail">&#xf0c0;: {{serie.Actors}}</p>
+        <p class="detail">&#xf091;: {{serie.Awards}}</p>
     </div>
 
     <ng-template #episodesListContainer>        
@@ -74,10 +74,10 @@
 
             </div>
             <div class="episode-production">
-                <p>&#xf03d;: {{epData.Director}}</p>
-                <p>&#xf305;: {{epData.Writer}}</p>
-                <p>&#xf0c0;: {{epData.Actors}}</p>
-                <p>&#xf091;: {{epData.Awards}}</p>
+                <p class="detail">&#xf03d;: {{epData.Director}}</p>
+                <p class="detail">&#xf305;: {{epData.Writer}}</p>
+                <p class="detail">&#xf0c0;: {{epData.Actors}}</p>
+                <p class="detail">&#xf091;: {{epData.Awards}}</p>
             </div>
         </div>        
     </ng-template>    
