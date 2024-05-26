@@ -2,7 +2,7 @@
 
 🇺🇸 This page allows you to consult detailed information on a wide variety of movies and TV series, and, in the case of series,       it's possible to consult each season and each chapter corresponding to it, as well as the data of each chapter.
 
-![OMDbAPI](https://github.com/MauricioBarrueta/omdbAPI/assets/60496232/50e48d6c-0e35-488a-9c22-0f32e06defe6)
+![omdbAPI](https://github.com/MauricioBarrueta/omdbAPI/assets/60496232/2bf7a3e7-d712-4ba1-95cb-f3988c8bf5ce)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
