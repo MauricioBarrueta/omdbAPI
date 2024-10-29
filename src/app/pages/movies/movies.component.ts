@@ -21,7 +21,7 @@ export class MoviesComponent implements OnInit {
     //* Obtiene el parámetro de la ruta, si viene vacío se asigna un valor predeterminado a la variable
     this.route.queryParams.subscribe(params => { this.movieNameParam = params['movie'] });
     if(this.movieNameParam === undefined || this.movieNameParam === null || this.movieNameParam === '') {
-      this.movieNameParam = 'Inglourious Basterds'
+      this.movieNameParam = 'The Lord of the Rings The Return of the King'
     }
     this.getMovieDetails()
   }

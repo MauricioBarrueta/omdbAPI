@@ -1,24 +1,24 @@
 header {
     padding: 0.5rem; cursor: default;
     text-align: center; letter-spacing: 1px;
-    background-color: var(--urobilin); color: var(--smokyBlack);
-    border-bottom: 2px dashed var(--smokyBlack);
+    background-color: var(--urobilin); color: var(--smokyBlack); border-bottom: 1px dashed var(--smokyBlack);    
     .link { 
         font-size: 18px; font-weight: bold; text-decoration: none;            
         color: var(--smokyBlack); transition: all 0.25s;
-        &:hover { color: var(--cyanCurnflowerBlue); }        
+        &:hover { color: var(--cyanCurnflowerBlue); } &:hover img { filter: invert(60%) sepia(71%) saturate(7467%) hue-rotate(173deg) brightness(96%) contrast(86%); }     
         img {
-            width: 25px; height: 25px;
-            margin-bottom: 5px;            
+            height: 20px;
+            margin-top: -3px; transition: all 0.25s;           
         }
     }
     span { font-size: 16px; }
 }
 
+.navigation, .input-container > form { display: flex; align-items: center; justify-content: center; }
 .navigation {   
-    display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap;
+    flex-wrap: wrap; gap: 25px;
     background-color: var(--smokyBlack); border-bottom: 1px solid var(--snow);
-    padding: 0.5rem; text-align: center;      
+    padding: 0.5rem; text-align: center;    
     a {        
         font-size: 14px; 
         background-color: var(--smokyBlack); border: 0;
@@ -34,16 +34,18 @@ header {
 }
 
 .input-container {
-    padding: 1em 1em 0.5rem 1em;
+    padding: 1em 1em 0 1em;
     form {
-        width: 100%;
+        width: 100%; flex-wrap: wrap;
         input {
             width: 80%;
-            margin: 0 auto;
-            text-align: center; text-transform: capitalize;                
-            &::placeholder { 
-                font-size: 12px; letter-spacing: 1px; text-transform: none; 
-            }                
+            font-size: 14px; text-align: center; text-transform: capitalize;                
+            &::placeholder { font-size: 11px; letter-spacing: 1px; text-transform: none; }                
         } 
+        label {
+            width: 100%; padding-top: 5px;
+            font-size: 11px; color: var(--snow); opacity: .75;
+            &::before { content: "\f002"; font-size: 8px; margin-right: 10px; }
+        }
     }
 }

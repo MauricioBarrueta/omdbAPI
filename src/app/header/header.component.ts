@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {    
     //* Se obtiene la ruta para saber a cuál se mandará el parámetro
     this.currPath = this.router.url
-
     this.placeholder = this.currPath.includes('/movies') ? `${environment.moviePlaceholder}` : `${environment.seriePlaceholder}`
   }
 
@@ -32,9 +31,7 @@ export class HeaderComponent implements OnInit {
     //* Se redirecciona a la ruta y se le asigna su parámetro dependiendo el valor de la ruta actual
     if(value != '') {
       this.currPath.includes('/movies') ? this.router.navigate([`movies/search-by`], { queryParams: { movie: `${value}` }})   
-      : this.router.navigate([`series/search-by`], { queryParams: { serie: `${value}` } })
-    }
-    
-  }
-    
+        : this.router.navigate([`series/search-by`], { queryParams: { serie: `${value}` } })
+    }    
+  }    
 }

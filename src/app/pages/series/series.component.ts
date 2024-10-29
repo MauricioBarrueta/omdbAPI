@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { SerieService } from './service/serie.service';
 import { Episode, Episodes, Serie } from './interface/serie';
 import { environment } from 'src/environments/environment';
@@ -15,8 +15,10 @@ export class SeriesComponent implements OnInit {
 
   serieName!: string 
   serie$: Serie[] = []
+
   totalSeasonsValue!: number 
   totalSeasons$: number[] = [] 
+  
   season$: Episodes[] = []
   episodes$: any[] = []
   episode$: Episode[] = []
@@ -52,7 +54,6 @@ export class SeriesComponent implements OnInit {
           }
           this.serie$.push(res)
         } else {
-          // this.serieName = ''
           this.responseStatus(this.serieName)
         }
       })
