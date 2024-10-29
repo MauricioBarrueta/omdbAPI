@@ -1,8 +1,11 @@
-🇲🇽 Página que permite consultar información detallada sobre una amplia variedad de películas y series de televisión, además de       que, en el caso de las series, es posible consultar cada temporada y cada capítulo correspondiente a esta, así como los datos     de cada capítulo.
+🇲🇽 Este sitio web permite consultar información detallada sobre una amplia variedad de películas y series de televisión, además de que, en el caso de las series, es posible consultar cada temporada y cada capítulo correspondiente a esta, así como los datos de cada capítulo.
 
-🇺🇸 This page allows you to consult detailed information on a wide variety of movies and TV series, and, in the case of series,       it's possible to consult each season and each chapter corresponding to it, as well as the data of each chapter.
+🇺🇸 This website allows you to consult detailed information on a wide variety of movies and TV series, in addition, in the case of series, it's possible to consult each season and each chapter corresponding to it, as well as the data of each chapter.
 
-![OMDbAPI](https://github.com/MauricioBarrueta/omdbAPI/assets/60496232/50e48d6c-0e35-488a-9c22-0f32e06defe6)
+🔗 https://movies-seriesdb.web.app/
+
+
+![OMDbAPI](https://github.com/user-attachments/assets/d031421e-effa-4167-b102-d5dc5f753f83)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
