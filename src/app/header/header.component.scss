@@ -19,7 +19,7 @@ header {
     .active { background-color: rgba($color: #deb522, $alpha: .5); }
     a {        
         width: 50%;
-        font-size: 16px; line-height: 25px;      
+        font-size: 16px; line-height: 25px; color: var(--snow);     
         &:hover { background-color: var(--urobilin); color: var(--smokyBlack); border: 0 !important; }             
         &:hover img { filter: none; }
         img {
