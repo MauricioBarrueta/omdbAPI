@@ -1,6 +1,6 @@
 <app-header (param)="getSerieParam($event)"></app-header>
 
-<div class="requestStatus">{{requestStatus}}</div>
+<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''" [innerHTML]="errorIcon + requestStatus"></div>
 
 <div class="serie-card-container" *ngFor="let serie of serie$">
     <!-- Serie Info -->
@@ -15,7 +15,7 @@
                 <span class="lang">{{serie.Language}}</span>
             </div>
             <div class="serie-rating">
-                <img class="star" src="../../../assets/svg/ratingStar.svg" alt="">
+                <img class="star" src="{{svgPath}}ratingStar.svg" alt="">
                 {{serie.imdbRating}}
             </div>
             <div class="serie-genre">
@@ -31,10 +31,9 @@
         </div>    
     </div>
     <div class="serie-details" *ngIf="season$.length <= 0;else episodesListContainer">
-        <!-- <p class="detail">&#xf03d;: {{serie.Director}}</p> -->
         <p class="detail">&#xf305;: {{serie.Writer}}</p>
-        <p class="detail">&#xf0c0;: {{serie.Actors}}</p>
-        <p class="detail">&#xf091;: {{serie.Awards}}</p>
+        <p class="detail">&#xe533;: {{serie.Actors}}</p>
+        <p class="detail">&#xf559;: {{serie.Awards}}</p>
     </div>
 
     <ng-template #episodesListContainer>        
@@ -61,7 +60,7 @@
                         <span> &#8226; {{epData.Runtime}}</span>
                     </div>
                     <div class="episode-rating">
-                        <img class="star" src="../../../assets/svg/ratingStar.svg" alt="">
+                        <img class="star" src="{{svgPath}}ratingStar.svg" alt="">
                         {{epData.imdbRating}}
                     </div>
                     <div class="episode-genere">
@@ -77,10 +76,9 @@
             <div class="episode-production">
                 <p class="detail">&#xf03d;: {{epData.Director}}</p>
                 <p class="detail">&#xf305;: {{epData.Writer}}</p>
-                <p class="detail">&#xf0c0;: {{epData.Actors}}</p>
-                <p class="detail">&#xf091;: {{epData.Awards}}</p>
+                <p class="detail">&#xe533;: {{epData.Actors}}</p>
+                <p class="detail">&#xf559;: {{epData.Awards}}</p>
             </div>
         </div>        
     </ng-template>    
 </div>
-

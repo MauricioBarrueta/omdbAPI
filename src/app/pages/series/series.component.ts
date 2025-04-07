@@ -24,6 +24,8 @@ export class SeriesComponent implements OnInit {
   episode$: Episode[] = []
 
   requestStatus!: string
+  errorIcon: string = environment.customIcon
+  svgPath: string = environment.filesPath
   
   ngOnInit(): void {
     //* Obtiene el parámetro de la ruta, si viene vacío se asigna un valor predeterminado
@@ -90,7 +92,7 @@ export class SeriesComponent implements OnInit {
   /* Si la petición falla o si el nombre que se recibe viene vacío */
   responseStatus(nameValue: string) {
     this.serie$ = []
-    this.requestStatus = !nameValue || nameValue === undefined ? `${environment.serieParamEmpty}` : `${environment.serieNotFound}`
+    this.requestStatus = !nameValue || nameValue === undefined ? `${environment.emptyParam}` : `${environment.paramNotFound}`
   }
   
   /* Limpiar tabla de episodios por temporada */

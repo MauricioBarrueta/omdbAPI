@@ -1,14 +1,19 @@
 <header>
-    <a class="link" href="http://www.omdbapi.com/" target="_blank"><img src="https://api.iconify.design/bx:bxl-imdb.svg"> Open Movie Database (OMDb): </a>
-    <span>La base de datos gratuita más grande sobre información de películas y series</span>
+    <p>Visita el sitio oficial de <a href="http://www.omdbapi.com/" class="link" target="_blank">OMDb</a>, la mayor base de datos gratuita de películas y series</p>
 </header>
-<div class="navigation">
-    <a class="btn btn-dark" routerLink="/movies" [href]="['movies']"><img src="{{svgFolder}}movie.svg" alt=""> Películas</a>
-    <a class="btn btn-dark" routerLink="/series" [href]="['series']"><img src="{{svgFolder}}serie.svg" alt=""> Series</a>
-</div>
+
+<div class="navigation d-flex">
+    <a class="btn btn-dark smokyBg" routerLink="/movies" [href]="['movies']" [ngClass]="path.includes('movies') ? 'active' : ''">
+        <img src="{{svgFolder}}movie.svg" alt=""> Películas
+    </a>
+    <a class="btn btn-dark smokyBg" routerLink="/series" [href]="['series']" [ngClass]="path.includes('series') ? 'active' : ''">
+        <img src="{{svgFolder}}serie.svg" alt=""> Series
+    </a>
+</div> 
+
 <div class="input-container">
-    <form (submit)="setParam(inputValue)">
-        <input class="form-control input" type="text" name="movieName" [(ngModel)]="inputValue" [placeholder]="placeholder">
-        <label for="movieName">Teclea Enter ↵</label>
+    <form class="d-flex" (submit)="setParam(inputValue)">
+        <input class="form-control input" type="text" name="movieName" [(ngModel)]="inputValue" [placeholder]="'Ej. ' + placeholderValue">
+        <label for="movieName">Presiona 'Enter ↵' para buscar</label>
     </form>
 </div>

@@ -13,5 +13,4 @@ export class MovieService {
   getMovieByName(movieName: string) {
     return this.http.get<Movie>(`${environment.url}/?t=${movieName}&apikey=${environment.key}`)
   }
-
 }

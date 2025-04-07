@@ -20,5 +20,16 @@ html, body {
 body {    
     max-width: 100%; min-height: 100vh;
     background-color: var(--smokyBlack);
-    // background-image: linear-gradient(to bottom, #0c0b00, #423e39, #7c7773, #bbb4b3, #fcf7f7);  
+}
+
+p { margin-bottom: 0; }
+a { border: 0 !important; text-decoration: none; }
+
+.urobilinBg { background-color: var(--urobilin); } .smokyBg { background-color: var(--smokyBlack) !important; }
+
+/* Custom Icon */
+.fa-stack {
+    font-size: 16px; line-height: 1.85em;
+    margin-right: 15px;
+    .fa-ban { color: var(--firebrick) !important; } .fa-magnifying-glass { color: var(--snow); }
 }

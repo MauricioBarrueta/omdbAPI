@@ -1,11 +1,16 @@
 export const environment = {
     key: 'e312d535',
     url: 'http://www.omdbapi.com',
-    moviePlaceholder: 'Ingresa el nombre de la película que buscas y presiona la tecla Enter ↵ para buscar:',
-    seriePlaceholder: 'Ingresa el nombre de la serie, caricatura, etc., que buscas y presiona la tecla Enter ↵ para buscar:',
-    movieParamEmpty: `\u{f071} Primero debes ingresar el nombre de la película que estás buscando`,
-    movieNotFound: `\u{f05e} No existe ninguna película que coincida con este nombre, verifícalo e intenta de nuevo`,
-    serieParamEmpty: `\u{f071} Primero debes ingresar el nombre de la serie que estás buscando`,
-    serieNotFound: `\u{f05e} No existe ninguna serie que coincida con este nombre, verifícalo e intenta de nuevo`,
-    svgPath: '../../assets/svg/'
+
+    moviePlaceholder: '"The Lord of the Rings: The Return of the King"',
+    seriePlaceholder: '"Blue Eye Samurai"',
+    customIcon: `
+        <span class="fa-stack fa-1x">
+            <i class="fa-solid fa-magnifying-glass fa-stack-1x fa-flip-horizontal"></i>
+            <i class="fa-solid fa-ban fa-stack-2x"></i>
+        </span>`,
+    emptyParam: `Debes ingresar un nombre antes de continuar...`,
+    paramNotFound: 'No se encontraron resultados que coincidan con este nombre, verifícalo e inténtalo de nuevo',   
+    
+    filesPath: '../../assets/svg/'
 };

@@ -1,6 +1,6 @@
 <app-header (param)="getMovieParam($event)"></app-header>
 
-<div class="requestStatus">{{requestStatus}}</div>
+<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''" [innerHTML]="errorIcon + requestStatus"></div>
 
 <div class="movie-card-container" *ngFor="let movie of movie$">    
     <div class="movie-general-data">
@@ -14,7 +14,7 @@
                 <span class="lang">{{movie.Language}}</span>
             </div>
             <div class="movie-rating">
-                <img class="star" src="../../../assets/svg/ratingStar.svg" alt="">{{movie.imdbRating}}
+                <img class="star" src="{{svgPath}}ratingStar.svg" alt="">{{movie.imdbRating}}
             </div>
             <div class="movie-genre">
                 <span *ngFor="let genre of movie.Genre?.split(',')">{{genre}}</span>
@@ -25,8 +25,8 @@
         </div>        
     </div>
     <div class="movie-details">
-        <p class="detail">&#xf03d;: {{movie.Director}}.</p>
-        <p class="detail">&#xf0c0;: {{movie.Actors}}.</p>
-        <p class="detail">&#xf091;: {{movie.Awards}}.</p>
+        <p class="detail">&#xf03d;: {{movie.Director}}</p>
+        <p class="detail">&#xe533;: {{movie.Actors}}</p>
+        <p class="detail">&#xf559;: {{movie.Awards}}</p>
     </div>    
 </div>
