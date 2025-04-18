@@ -4,8 +4,7 @@
 
 🔗 https://movies-seriesdb.web.app/
 
-
-![OMDbAPI](https://github.com/user-attachments/assets/d031421e-effa-4167-b102-d5dc5f753f83)
+![OMDbAPI](https://github.com/user-attachments/assets/358ed6c9-ddd1-40e8-a37f-6e0a4a7f64bc)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
