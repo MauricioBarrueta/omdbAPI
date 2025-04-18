@@ -3,17 +3,17 @@
 </header>
 
 <div class="navigation d-flex">
-    <a class="btn smokyBg" routerLink="/movies" [href]="['movies']" [ngClass]="path.includes('movies') ? 'active' : ''">
+    <a class="btn smokyBg" [href]="['movies']" [ngClass]="path.includes('/movies') ? 'active' : ''">
         <img src="{{svgFolder}}movie.svg" alt=""> Películas
     </a>
-    <a class="btn smokyBg" routerLink="/series" [href]="['series']" [ngClass]="path.includes('series') ? 'active' : ''">
+    <a class="btn smokyBg" [href]="['series']" [ngClass]="path.includes('/series') ? 'active' : ''">
         <img src="{{svgFolder}}serie.svg" alt=""> Series
     </a>
 </div> 
 
 <div class="input-container">
     <form class="d-flex" (submit)="setParam(inputValue)">
-        <input class="form-control input" type="text" name="movieName" [(ngModel)]="inputValue" [placeholder]="'Ej. ' + placeholderValue">
+        <input class="form-control input" type="text" name="movieName" [(ngModel)]="inputValue" [placeholder]="'Ej. ' + placeholderValue" autocomplete="off">
         <label for="movieName">Presiona 'Enter ↵' para buscar</label>
     </form>
 </div>

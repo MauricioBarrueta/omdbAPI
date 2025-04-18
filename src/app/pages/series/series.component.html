@@ -1,6 +1,10 @@
 <app-header (param)="getSerieParam($event)"></app-header>
 
-<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''" [innerHTML]="errorIcon + requestStatus"></div>
+<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''">
+    <span class="fa-stack fa-1x">
+        <i class="fa-solid fa-magnifying-glass fa-stack-1x fa-flip-horizontal"></i><i class="fa-solid fa-ban fa-stack-2x"></i>
+    </span>{{requestStatus}}
+</div>
 
 <div class="serie-card-container" *ngFor="let serie of serie$">
     <!-- Serie Info -->

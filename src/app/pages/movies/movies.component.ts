@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './service/movie.service';
 import { Movie } from './interface/movie';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,14 +15,13 @@ export class MoviesComponent implements OnInit {
 
   movieNameParam!: string
   movie$: Movie[] = [] 
-  requestStatus!: string
-  errorIcon: string = environment.customIcon
 
+  requestStatus!: string
   svgPath: string = environment.filesPath
 
   ngOnInit(): void {
     //* Obtiene el parámetro de la ruta, si viene vacío se asigna un valor predeterminado a la variable
-    this.route.queryParams.subscribe(params => { this.movieNameParam = params['movie'] });
+    this.route.queryParams.subscribe(params => { this.movieNameParam = params['film']});
     if(this.movieNameParam === undefined || this.movieNameParam === null || this.movieNameParam === '') {
       this.movieNameParam = 'The Lord of the Rings: The Return of the King'
     }

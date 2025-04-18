@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
     this.param.emit(value)
     //* Se redirecciona a la ruta y se le asigna su parámetro dependiendo el valor de la ruta actual
     if(value != '') {
-      this.path.includes('/movies') ? this.router.navigate([`movies/search-by`], { queryParams: { movie: `${value}` }})   
-        : this.router.navigate([`series/search-by`], { queryParams: { serie: `${value}` } })
+      this.path.includes('/movies') ? this.router.navigate([`movies`], { queryParams: { film: `${value.replace(/ /g,"+")}` }})   
+        : this.router.navigate([`series`], { queryParams: { show: `${value.replace(/ /g,"+")}` } })
     }    
   }    
 }

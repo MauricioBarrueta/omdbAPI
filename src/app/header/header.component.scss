@@ -1,7 +1,7 @@
 header {
     padding: .25rem 1em; cursor: default;
     border-bottom: 2px dotted rgba($color: #fcf7f7, $alpha: .75); 
-    p, .link { color: var(--snow); }
+    p, .link { color: var(--snow); margin-bottom: 0 !important; }
     p {
         font-size: 11px; opacity: .75;
         .link { 
@@ -18,7 +18,7 @@ header {
     padding: 0.5rem; border-bottom: 1px solid rgba($color: #fcf7f7, $alpha: .75);
     .active { background-color: rgba($color: #deb522, $alpha: .5); }
     a {        
-        width: 50%;
+        width: 50%; border: none !important;
         font-size: 16px; line-height: 25px; color: var(--snow);     
         &:hover { background-color: var(--urobilin); color: var(--smokyBlack); border: 0 !important; }             
         &:hover img { filter: none; }

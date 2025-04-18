@@ -3,6 +3,11 @@
     width: 100%; position: absolute; align-items: center; justify-content: center;
     text-align: center; font-size: 18px; letter-spacing: 1px; font-weight: bold; color: var(--cyanCurnflowerBlue); 
     padding: 1em; padding-bottom: .5rem; user-select: none; visibility: hidden;
+    .fa-stack {
+        font-size: 16px; line-height: 1.85em;
+        margin-right: 15px;
+        .fa-ban { color: var(--firebrick); } .fa-magnifying-glass { color: var(--snow); }
+    }
 } .visible { visibility: visible; border-bottom: 2px dotted var(--snow); }
 
 /* Container */
