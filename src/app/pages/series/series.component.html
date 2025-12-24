@@ -1,14 +1,10 @@
 <app-header (param)="getSerieParam($event)"></app-header>
 
-<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''">
-    <span class="fa-stack fa-1x">
-        <i class="fa-solid fa-magnifying-glass fa-stack-1x fa-flip-horizontal"></i><i class="fa-solid fa-ban fa-stack-2x"></i>
-    </span>{{requestStatus}}
-</div>
+<span class="requestStatus" [ngClass]="requestStatus.length > 0 ? 'visible' : ''"><i class="fa-regular fa-circle-xmark"></i>{{requestStatus}}</span>
 
 <div class="serie-card-container" *ngFor="let serie of serie$">
     <!-- Serie Info -->
-    <div class="serie-general-data">
+    <div class="serie-general-data" #card>
         <img class="serie-poster" [src]="serie.Poster">
         <div class="serie-info">
             <p class="serie-title">{{serie.Title}}</p>
@@ -19,14 +15,13 @@
                 <span class="lang">{{serie.Language}}</span>
             </div>
             <div class="serie-rating">
-                <img class="star" src="{{svgPath}}ratingStar.svg" alt="">
-                {{serie.imdbRating}}
+                <i class="fa-solid fa-star"></i>{{serie.imdbRating | number:'1.0-1'}}
             </div>
             <div class="serie-genre">
-                <span *ngFor="let genre of serie.Genre?.split(',')">{{genre}}</span>
+                <span *ngFor="let genre of serie.Genre.split(',')">{{genre}}</span>
             </div>
             <div class="serie-seasons">
-                <span>Seasons:</span>
+                <span>Temporadas</span>
                 <button *ngFor="let season of totalSeasons$" (click)="getSelectedSeason(season)">{{season}}</button>
             </div>
             <div class="serie-plot">
@@ -35,54 +30,56 @@
         </div>    
     </div>
     <div class="serie-details" *ngIf="season$.length <= 0;else episodesListContainer">
-        <p class="detail">&#xf305;: {{serie.Writer}}</p>
-        <p class="detail">&#xe533;: {{serie.Actors}}</p>
-        <p class="detail">&#xf559;: {{serie.Awards}}</p>
+        <p class="detail">&#xf5ad;: {{serie.Writer}}</p>
+        <p class="detail">&#xf0c0;: {{serie.Actors}}</p>
+        <p class="detail">&#xf091;: {{serie.Awards}}</p>
     </div>
 
     <ng-template #episodesListContainer>        
         <!-- Season Episodes List -->
-        <div class="serie-episodes" *ngFor="let episode of season$">
-            <button class="clear-episodes-list" title="Cerrar la lista" (click)="clearContent()">&#xf55a; Volver</button>
-            <p class="serie-season-number">Episodes from season {{episode.Season}}:</p>
+        <div class="serie-episodes" *ngFor="let episode of season$" #episodesList>
+            <button class="clear-episodes-list" title="Cerrar la lista" (click)="clearContent()">&#xf55a; Cerrar</button>
+            <p class="serie-season-number">Temporada {{episode.Season}}: Episodios</p>
             <div class="serie-episodes-list">
-                <button *ngFor="let e of episodes$" (click)="getSelectedEpisode(episode.Season, e.Episode)">
-                    <span>{{e.Episode}}: </span>{{e.Title}}                    
+                <button *ngFor="let e of episodes$" (click)="getSelectedEpisode(episode.Season, e.Episode)" [ngClass]="getEpisodeClass(e.Episode)">
+                    <span>{{e.Episode}}. </span>{{e.Title}}                    
                 </button>
             </div>
         </div>
-        <!-- Episode Info -->
-        <div class="episode-card-container" *ngFor="let epData of episode$">
-            <p class="episode-number">Episode {{epData.Episode}}:</p>
-            <div class="episode-general-data">
-                <div class="episode-info">
-                    <p class="episode-title">{{epData.Title}}</p>
-                    <span class="season-episode-info">Season: {{epData.Season}} &#8226; Episode: {{epData.Episode}}</span>
-                    <div class="episode-time">
-                        <span>{{epData.Year}}</span>
-                        <span> &#8226; {{epData.Rated}}</span>
-                        <span> &#8226; {{epData.Runtime}}</span>
-                    </div>
-                    <div class="episode-rating">
-                        <img class="star" src="{{svgPath}}ratingStar.svg" alt="">
-                        {{epData.imdbRating}}
-                    </div>
-                    <div class="episode-genere">
-                        <span *ngFor="let genre of epData.Genre?.split(',')">{{genre}}</span>
-                    </div>
-                    <div class="episode-plot">
-                        <p class="plot">{{epData.Plot}}</p>
-                    </div>
-                </div>
-                <img class="episode-poster" [src]="epData.Poster">
 
+        <!-- Episode Info -->
+        <div class="episode-section" *ngIf="episode$.length > 0" #episode>
+            <div class="episode-card-container" *ngFor="let epData of episode$">
+                <button class="clear-episodes-list" title="Lista de episodios" (click)="clearEpisode()">&#xf060; Episodios</button>
+                <div class="episode-general-data">
+                    <div class="episode-info">
+                        <p class="episode-title">{{epData.Title}}</p>
+                        <span class="season-episode-info">Temporada: {{epData.Season}} &#8226; Episodio: {{epData.Episode}}</span>
+                        <div class="episode-time">
+                            <span>{{epData.Year}}</span>
+                            <span> &#8226; {{epData.Rated}}</span>
+                            <span> &#8226; {{epData.Runtime}}</span>
+                        </div>
+                        <div class="episode-rating">
+                            <i class="fa-solid fa-star"></i>{{epData.imdbRating | number:'1.0-1'}}
+                        </div>
+                        <div class="episode-genere">
+                            <span *ngFor="let genre of epData.Genre.split(',')">{{genre}}</span>
+                        </div>
+                        <div class="episode-plot">
+                            <p class="plot">{{epData.Plot}}</p>
+                        </div>
+                    </div>
+                    <img class="episode-poster" [src]="epData.Poster">
+            
+                </div>
+                <div class="episode-production">
+                    <p class="detail">&#xf5ad;: {{epData.Writer}}</p>
+                    <p class="detail">&#xe131;: {{epData.Director}}</p>
+                    <p class="detail">&#xf0c0;: {{epData.Actors}}</p>
+                    <p class="detail">&#xf091;: {{epData.Awards}}</p>
+                </div>
             </div>
-            <div class="episode-production">
-                <p class="detail">&#xf03d;: {{epData.Director}}</p>
-                <p class="detail">&#xf305;: {{epData.Writer}}</p>
-                <p class="detail">&#xe533;: {{epData.Actors}}</p>
-                <p class="detail">&#xf559;: {{epData.Awards}}</p>
-            </div>
-        </div>        
+        </div>               
     </ng-template>    
 </div>

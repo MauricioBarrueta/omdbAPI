@@ -1,24 +1,11 @@
-header {
-    padding: .25rem 1em; cursor: default;
-    border-bottom: 2px dotted rgba($color: #fcf7f7, $alpha: .75); 
-    p, .link { color: var(--snow); margin-bottom: 0 !important; }
-    p {
-        font-size: 11px; opacity: .75;
-        .link { 
-            font-size: 13px; font-weight: bold; letter-spacing: 1px; 
-            transition: all 0.25s;
-            &:hover { color: var(--cyanCurnflowerBlue); }             
-        }
-    }    
-}
-
 .navigation, .input-container form { align-items: center; justify-content: center; }
 .navigation {   
     flex-wrap: wrap; justify-content: space-around; 
-    padding: 0.5rem; border-bottom: 1px solid rgba($color: #fcf7f7, $alpha: .75);
-    .active { background-color: rgba($color: #deb522, $alpha: .5); }
+    border-bottom: 1px dashed rgba($color: #fcf7f7, $alpha: .5); padding: 1em 0 0.5rem 0; 
+    .active { background-color: var(--urobilinShade) }
     a {        
-        width: 50%; border: none !important;
+        width: 49%; 
+        border: 1px solid rgba($color: #deb522, $alpha: .25) !important;
         font-size: 16px; line-height: 25px; color: var(--snow);     
         &:hover { background-color: var(--urobilin); color: var(--smokyBlack); border: 0 !important; }             
         &:hover img { filter: none; }
@@ -34,14 +21,13 @@ header {
     form {
         width: 100%; flex-wrap: wrap;   
         input {
-            width: 60%;
-            font-size: 16px; text-align: center; text-transform: capitalize; letter-spacing: 1px;               
-            &::placeholder { font-size: 12px; text-transform: none; }                
+            width: 75%;
+            font-size: 14px; text-align: center; font-weight: 600; text-transform: capitalize; letter-spacing: 1px; line-height: 1.75;            
+            &::placeholder { font-size: 12px; font-weight: normal; text-transform: none; }  
         } 
         label {
             width: 100%; padding-top: 5px;
-            font-size: 11px; color: var(--snow); opacity: .75;
-            &::before { content: "\f002"; font-size: 9px; margin-right: 10px; }
+            font-size: 11px; color: var(--snow); opacity: .7;
         }
     }
 }

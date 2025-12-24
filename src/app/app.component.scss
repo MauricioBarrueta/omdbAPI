@@ -1,14 +1,10 @@
 /* Request Response Error */
 .requestStatus {
-    width: 100%; position: absolute; align-items: center; justify-content: center;
-    text-align: center; font-size: 18px; letter-spacing: 1px; font-weight: bold; color: var(--cyanCurnflowerBlue); 
-    padding: 1em; padding-bottom: .5rem; user-select: none; visibility: hidden;
-    .fa-stack {
-        font-size: 16px; line-height: 1.85em;
-        margin-right: 15px;
-        .fa-ban { color: var(--firebrick); } .fa-magnifying-glass { color: var(--snow); }
-    }
-} .visible { visibility: visible; border-bottom: 2px dotted var(--snow); }
+    width: 100%; display: none; justify-content: center; align-items: center;
+    font-size: 18px; letter-spacing: 1px; font-weight: bold; color: var(--firebrick); 
+    padding: 2em 1em; margin: 10px 0; user-select: none; visibility: hidden;
+    i { margin-right: 10px; }
+} .visible { display: flex; }
 
 /* Container */
 .content {
@@ -19,7 +15,7 @@
 /* Movies - Series Cards */
 .movie-card-container, .serie-card-container {
     position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; flex-wrap: nowrap;
-    padding: 0.5rem;   
+    padding: 1em; 
 
     .movie-general-data, .movie-details, .serie-general-data, .episode-general-data, .serie-episodes, .serie-details, .episode-production, 
     .episode-card-container { max-width: 880px; }    
@@ -30,12 +26,12 @@
         background-color: var(--smokyBlack); color: var(--snow); border: 1px solid var(--snow);
         /* Movie-Serie Poster */
         .movie-poster, .serie-poster, .episode-poster {
-            width: 210px; border-radius: 10px;
+            width: 225px; border-radius: 5px;
             border: 1px solid;
         }
         /* Movie-Serie Title */
         .movie-title, .serie-title, .episode-title {
-            text-align: center; font-size: 18px; letter-spacing: 1px; font-weight: bold; 
+            text-align: center; font-size: 20px; letter-spacing: 1px; font-weight: bold; 
             margin: 0; padding: 5px; border-bottom: 1px solid var(--snow);
         }
         /* Time, Rating, Genre */
@@ -45,9 +41,9 @@
         }
         /* Movie-Serie Time */
         .movie-time, .serie-time, .episode-time {
-            flex-wrap: wrap; 
+            flex-wrap: wrap; row-gap: 8px;
             font-size: 14px; color: darkgray; 
-            margin: 5px 0 auto; padding: 0 !important; 
+            padding: 0.5rem;
             span { margin-inline: 15px; padding: 3px 0; }
             .lang {
                 width: 100%; padding-top: 5px; border-top: 1px dashed var(--snow);
@@ -57,11 +53,14 @@
         /* Movie-Serie Rating Star */
         .movie-rating, .serie-rating, .episode-rating {
             font-size: 18px; font-weight: bolder; letter-spacing: 1px;
-            align-items: center; margin: 5px 0;  
+            align-items: baseline; margin: 5px 0;  
             background-color: var(--urobilin); color: var(--smokyBlack);                        
-            .star { width: 22px; margin-right: 10px; filter: drop-shadow(1px 1px 2px var(--smokyBlack)); }
             &::after {
-                content: '/10'; font-size: 12px; opacity: .55;
+                content: '/10'; font-size: 14px; opacity: .5; margin-left: 5px;
+            }
+            i { 
+                font-size: 16px; text-shadow: -1px -1px 0 #9E7C00, 1px -1px 0 #9E7C00, -1px 1px 0 #9E7C00, 1px 1px 0 #9E7C00;
+                color: gold; margin-right: 8px;
             }
         }
         /* Movie-Serie Genre */
@@ -73,19 +72,21 @@
         .movie-plot, .serie-plot, .episode-plot {
             padding: 5px; margin: 5px 0; border-top: 1px solid var(--snow);                        
             .plot {
-                font-size: 13px; text-align: justify;
+                font-size: 14px; text-align: center;
                 font-weight: 500; letter-spacing: 1px;
             }
         }
     }
+
     /* Movie-Serie Details */
     .movie-details, .serie-details, .episode-production {
         width: 100%; position: relative;
-        padding: 0.5rem; border-radius: 0 0 10px 10px; border: 0;
+        padding: 1em; border-radius: 0 0 10px 10px; border: 0; border-top: 1px dashed var(--smokyBlack);
         background-color: var(--urobilin); cursor: default;
         .detail { 
-            font-size: 16px; letter-spacing: 2px; text-align: justify;
-            margin: 10px 0;            
+            font-size: 16px; letter-spacing: 1px; text-align: justify;
+            margin: 10px 0;          
+            &:first-child, &:last-child { margin: 0; }  
         }        
     } 
 }

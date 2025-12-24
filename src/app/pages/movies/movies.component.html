@@ -1,10 +1,7 @@
 <app-header (param)="getMovieParam($event)"></app-header>
 
-<div class="requestStatus d-flex" [ngClass]="requestStatus.length > 0 ? 'visible' : ''">
-    <span class="fa-stack fa-1x">
-        <i class="fa-solid fa-magnifying-glass fa-stack-1x fa-flip-horizontal"></i><i class="fa-solid fa-ban fa-stack-2x"></i>
-    </span>{{requestStatus}}
-</div>
+<span class="requestStatus" [ngClass]="requestStatus.length > 0 ? 'visible' : ''"><i class="fa-regular fa-circle-xmark"></i>{{requestStatus}}</span>
+
 <div class="movie-card-container" *ngFor="let movie of movie$">    
     <div class="movie-general-data">
         <img class="movie-poster" [src]="movie.Poster" alt="">
@@ -17,10 +14,10 @@
                 <span class="lang">{{movie.Language}}</span>
             </div>
             <div class="movie-rating">
-                <img class="star" src="{{svgPath}}ratingStar.svg" alt="">{{movie.imdbRating}}
+                <i class="fa-solid fa-star"></i>{{movie.imdbRating | number:'1.0-1'}}
             </div>
             <div class="movie-genre">
-                <span *ngFor="let genre of movie.Genre?.split(',')">{{genre}}</span>
+                <span *ngFor="let genre of movie.Genre.split(',')">{{genre}}</span>
             </div>
             <div class="movie-plot">                
                 <p class="plot">{{movie.Plot}}</p>
@@ -28,8 +25,8 @@
         </div>        
     </div>
     <div class="movie-details">
-        <p class="detail">&#xf03d;: {{movie.Director}}</p>
-        <p class="detail">&#xe533;: {{movie.Actors}}</p>
-        <p class="detail">&#xf559;: {{movie.Awards}}</p>
+        <p class="detail">&#xe131;: {{movie.Director}}</p>
+        <p class="detail">&#xf0c0;: {{movie.Actors}}</p>
+        <p class="detail">&#xf091;: {{movie.Awards}}</p>
     </div>    
 </div>

@@ -4,58 +4,59 @@
     .serie-general-data, .episode-general-data {         
         .serie-info, .episode-info {            
             .serie-genre, .episode-genere {                
-                border-bottom: 1px dashed var(--snow);
+                border-bottom: 1px solid var(--snow); padding-bottom: .5rem;
             }
             .serie-seasons {                
-                margin: 5px 0; justify-content: space-evenly; flex-wrap: wrap;
+                justify-content: center; flex-wrap: wrap; column-gap: 5px;
+                margin: 5px 0; padding-bottom: 0.5rem;
                 span {
-                    text-align: center; font-size: 16px; font-weight: bold; letter-spacing: 1px;
-                    display: inline-block; width: 100%; padding-bottom: 5px;                    
+                    width: 100%;
+                    font-size: 14px; font-weight: 600; letter-spacing: 1px;
+                    margin-bottom: 10px;                   
                 }
                 button {                    
-                    font-size: 12px; font-weight: bold; text-align: center;
-                    padding: 5px 10px; border-radius: 25%; border: none; transition: 0.25s;
+                    font-size: 12px; text-align: center;
+                    padding: 5px 10px; border-radius: 20%; border: 1px solid var(--snow); transition: 0.25s;
                     background-color: var(--cyanCurnflowerBlue); color: var(--snow); 
                     &:hover { background-color: var(--cyanCurnflowerBlueShade);}
                 }
-            }            
+            }      
+            .serie-plot { border-top-style: dashed; }      
         }
     }
 
     /* Episodes by season */
     .serie-episodes {
         width: 100%; position: relative;
-        padding: 0.5rem; border: 1px solid var(--snow); 
-        border-top-width: 5px !important; border-top-color: var(--urobilin) !important;
-        background-color: var(--smokyBlack); color: var(--snow);    
+        border-end-end-radius: 10px; border-end-start-radius: 10px;
+        padding: 0.5rem; border: 1px solid var(--snow); border-top-style: dotted; border-top-width: 2px; background-color: var(--smokyBlack); color: var(--snow);    
 
-        /* Clear List Button */    
-        .clear-episodes-list { 
-            width: fit-content; position: absolute; left: 5px;
-            font-size: 10px; letter-spacing: 1px;
-            padding: 5px; transition: color 0.35s;    
-            background-color: transparent; color: var(--snow); border: none;
-            &:hover { color: var(--firebrick); }               
-        }
         .serie-season-number {
-            font-size: 16px; text-align: center; font-weight: bold; letter-spacing: 1px;
-            padding: 5px 0; margin-bottom: 5px; border-bottom: 2px dotted var(--snow); cursor: default;
+            font-size: 15px; text-align: center; font-weight: bold; letter-spacing: 1px;
+            padding: 0 0.5rem 0.5rem 0.5rem; border-bottom: 1px solid var(--snow); cursor: default; margin: 0;
         }
+
         .serie-episodes-list {
-            display: grid; grid-template-columns: 50% 50%;  
-            margin-bottom: 5px;            
+            display: grid; grid-template-columns: 50% 50%; justify-content: space-between; column-gap: 8px;
+            padding: 0 0.5rem;      
+            
+            .odd { background-color: var(--smokyBlack) !important; }
+            .even { background-color: #181818 !important; }
+            
             button {                
                 position: relative; z-index: 1;
-                font-size: 14px; letter-spacing: 1px;
-                background-color: transparent; color: var(--snow); border: none;                
+                font-size: 13px; letter-spacing: 1px; text-align: left; line-height: 1.75;
+                background-color: transparent; color: var(--snow); border: none; padding: 0.5rem; 
+                &:nth-last-child(-n+2) { border-bottom: 0; }
+                
                 &::after {
                     content: ''; display: block;  z-index: -1; opacity: .75;
                     position: absolute; top: 70%; width: 0; height: 4px;
                     background: var(--urobilin); transition: width .4s;                    
                 }
-                &:hover::after { width: 100%; }
+                &:hover::after { width: 95%; }
                 span { 
-                    font-size: 15px; font-weight: bold;
+                    font-weight: bold; letter-spacing: normal; font-style: italic;
                     color: var(--cyanCurnflowerBlue); 
                 }
             }
@@ -63,30 +64,32 @@
     }
 
     /* Episode Card */
-    .episode-card-container {  
-        background-color: var(--smokyBlack); border-radius: 0 0 10px 10px;        
-        .episode-number {
-            text-align: center; font-size: 16px; font-weight: bold; letter-spacing: 2px;
-            margin: 0; padding: 5px 0; cursor: default; color: var(--snow);            
-            border: 1px solid var(--snow); border-bottom-style: dashed;
-            border-top-width: 5px !important; border-top-color: var(--urobilin) !important;
-        }
-        .episode-general-data {  
-            border-radius: 0; border-top: none;
-            .episode-info {
-                width: 100%;
-                .season-episode-info {
-                    width: 100%; display: inline-block; padding: 0 5px 5px 5px;
-                    text-align: center; font-size: 12px; color: darkgray;
+    .episode-section {
+        width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+        .episode-card-container { 
+            position: relative; 
+            background-color: var(--smokyBlack); 
+            .clear-episodes-list { top: 4%; }
+            .episode-general-data {  
+                flex-direction: row-reverse;
+                .episode-info {
+                    .season-episode-info {
+                        width: 100%; display: inline-block; padding: 0.5rem;
+                        text-align: center; font-size: 12px; color: darkgray;
+                        border-bottom: 1px dashed var(--snow);
+                    }
+                    .episode-genere { border-bottom-style: dashed; }
+                    .episode-plot { border-top: 0; }         
                 }
-                .episode-genere {
-                    border-bottom: 1px solid var(--snow);
-                }
-                .episode-plot {
-                    margin: 10px 0; border-top: none;                                
-                    .plot { font-size: 12px; }
-                }            
             }
         }
-    }
+    }    
+
+    /* Clear List Button */    
+    .clear-episodes-list { 
+        width: fit-content; position: absolute; left: 1%; z-index: 2;
+        font-size: 10px; letter-spacing: 1px;
+        padding: 5px; transition: color 0.35s; background-color: transparent; color: var(--snow); border: none;
+        &:hover { color: var(--firebrick); }               
+    }    
 }
