@@ -4,7 +4,7 @@
 
 🔗 https://movies-seriesdb.web.app/
 
-![omdb](https://github.com/user-attachments/assets/f4398556-d91f-48e5-830c-ea659f7ef8db)
+<img width="1366" height="653" alt="omdb" src="https://github.com/user-attachments/assets/0eadddda-44d2-4d71-bbe7-52142c97fdb8" />
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
