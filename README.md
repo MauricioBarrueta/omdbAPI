@@ -1,10 +1,10 @@
-🇲🇽 Este sitio web permite consultar información detallada sobre una amplia variedad de películas y series de televisión, además de que, en el caso de las series, es posible consultar cada temporada y cada capítulo correspondiente a esta, así como los datos de cada capítulo.
+🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Bootstrap, publicado con Firebase Hosting y conectado a OMDb API (omdbapi.com).
 
-🇺🇸 This website allows you to consult detailed information on a wide variety of movies and TV series, in addition, in the case of series, it's possible to consult each season and each chapter corresponding to it, as well as the data of each chapter.
+🇺🇸 Website developed with Angular and TypeScript, SCSS and Bootstrap, published with Firebase Hosting and connected to OMDb API (omdbapi.com).
 
 🔗 https://movies-seriesdb.web.app/
 
-![OMDbAPI](https://github.com/user-attachments/assets/358ed6c9-ddd1-40e8-a37f-6e0a4a7f64bc)
+<img width="1366" height="653" alt="omdb" src="https://github.com/user-attachments/assets/0eadddda-44d2-4d71-bbe7-52142c97fdb8" />
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
