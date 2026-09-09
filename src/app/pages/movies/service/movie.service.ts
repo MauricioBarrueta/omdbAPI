@@ -11,6 +11,6 @@ export class MovieService {
   constructor(private readonly http: HttpClient) {}  
 
   getMovieByName(movieName: string) {
-    return this.http.get<Movie>(`${environment.url}/?t=${movieName}&apikey=${environment.key}`)
+    return this.http.get<Movie>(`${environment.url}?t=${movieName}&apikey=${environment.key}`)
   }
 }

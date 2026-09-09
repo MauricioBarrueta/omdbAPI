@@ -34,7 +34,7 @@ export class SeriesComponent implements OnInit, OnDestroy {
     //* Obtiene el parámetro de la ruta, si viene vacío se asigna un valor predeterminado
     this.route.queryParams.subscribe(params => { this.serieName = params['show'] })
     if(this.serieName === undefined || this.serieName === null || this.serieName === '') {
-      this.serieName =  'Invincible'
+      this.serieName =  'Blue Eye Samurai'
     }
     this.getSerieDetails()
   }
