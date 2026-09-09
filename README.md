@@ -1,6 +1,6 @@
-🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Bootstrap, publicado con Firebase Hosting y conectado a OMDb API (omdbapi.com).
+🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Bootstrap, publicado con Firebase Hosting y conectado a OMDb API.
 
-🇺🇸 Website developed with Angular and TypeScript, SCSS and Bootstrap, published with Firebase Hosting and connected to OMDb API (omdbapi.com).
+🇺🇸 Website developed with Angular and TypeScript, using SCSS and Bootstrap, deployed on Firebase Hosting and connected to the OMDb API.
 
 🔗 https://movies-seriesdb.web.app/
 
